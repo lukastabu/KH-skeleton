@@ -1,0 +1,42 @@
+{
+    "authors": [
+        {
+            "name": "Lukas",
+            "email": "lukas.tabulevicius@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "User\\Skeleton\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "User\\SimpleCollectionTransformer\\Tests\\": "tests/"
+        }
+    },
+    "description": "skeleten project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "name": "user/skeleton",
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8"
+    },
+    "scripts": {
+        "phpcs": "./vendor/bin/phpcs --standard=phpcs.xml.dist",
+        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=2G",
+        "phpunit": "./vendor/bin/phpunit -c ./phpunit.xml.dist",
+        "all": [
+            "@phpcs",
+            "@phpstan",
+            "@phpunit"
+        ]
+    },
+    "type": "library",
+    "version": "1.0.0"
+}
